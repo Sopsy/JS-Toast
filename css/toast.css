@@ -1,0 +1,85 @@
+.toast-root {
+    position: fixed;
+    z-index: 110;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    user-select: none;
+    max-width: calc(100vw - 8px - 8px);
+    overflow: hidden;
+}
+
+.toast {
+    padding: 8px 16px;
+    margin-bottom: 8px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #000;
+    will-change: opacity;
+}
+
+@media(hover: hover) and (pointer: fine) {
+    .toast:hover {
+        transition-duration: 200ms;
+        opacity: initial;
+    }
+}
+
+.toast.success {
+    background-color: hsla(131, 82%, 63%, 0.8);
+}
+
+.toast.info {
+    background-color: hsla(198, 68%, 69%, 0.8);
+}
+
+.toast.warning {
+    background-color: hsla(37, 100%, 55%, 0.8);
+}
+
+.toast.error {
+    background-color: hsla(359, 83%, 65%, 0.8);
+}
+
+/* To add icons to different toast styles, use this */
+/*
+.toast::before {
+    font-family: icons;
+    font-size: 30px;
+    margin-right: 8px;
+}
+
+.toast.success::before {
+    content: "\e959";
+}
+
+.toast.info::before {
+    content: "\e957";
+}
+
+.toast.warning::before {
+    content: "\e956";
+}
+
+.toast.error::before {
+    content: "\e955";
+}
+*/
+
+.toast h3 {
+    color: #000;
+    font-size: 1.15em;
+    line-height: 1em;
+    margin: 0 0 4px 0;
+}
+
+.toast p {
+    margin: 0;
+    white-space: pre-line;
+}
